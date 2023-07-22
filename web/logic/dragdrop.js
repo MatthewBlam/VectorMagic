@@ -20,7 +20,12 @@ function is_valid_file_type(file) {
 
 drop.addEventListener("drop", function (e) {
     Array.from(e.dataTransfer.files).forEach(function (file) {
-        var file_path = String(file.path).split("/").join("&sol;");
+        var file_path
+        if (platform == "darwin") {
+            file_path = String(file.path).split("/").join("&sol;");
+        } else {
+            file_path = String(file.path).split("\\").join("&sol;");
+        }
         if (is_valid_file_type(file_path)) {
             add_new_file(file_path);
         }
