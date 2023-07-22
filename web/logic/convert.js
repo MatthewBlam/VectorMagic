@@ -4,11 +4,15 @@ var file_list = document.getElementById("files");
 function open_convert_page() {
     convert_page.style.opacity = "1";
     convert_page.style.pointerEvents = "auto";
+    progress_cancel_btn.style.opacity = "1";
+    progress_cancel_btn.style.pointerEvents = "auto";
 }
 
 function close_convert_page() {
     convert_page.style.opacity = "0";
     convert_page.style.pointerEvents = "none";
+    progress_cancel_btn.style.opacity = "0";
+    progress_cancel_btn.style.pointerEvents = "none";
 }
 
 var convert_btn = document.getElementById("convert-btn");
