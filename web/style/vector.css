@@ -1,0 +1,100 @@
+#vector-list-container {
+    background-color: var(--200);
+    border-radius: 4px;
+    flex: 1;
+    overflow-y: hidden;
+    padding: 13px 0px 13px 12px;
+    position: relative;
+    width: 100%;
+}
+
+#vector-list {
+    overflow-y: scroll;
+    height: calc(100% - 20px - 16px);
+    width: 100%;
+    border-radius: 2px;
+    padding-right: 12px;
+    position: relative;
+}
+
+#vectors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.vector {
+    font-size: var(--fs12);
+    color: var(--text-normal);
+    background-color: var(--0);
+    padding: 6px 8px 6px 8px;
+    border-radius: 4px;
+    height: 28px;
+    position: relative;
+    box-shadow: var(--elevation1);
+}
+
+.vector > span {
+    vertical-align: middle;
+    user-select: none;
+}
+
+#left-side {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+#back-btn {
+    font-size: var(--fs10);
+    font-weight: 600;
+    background-color: var(--0);
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 7px 6px 7.25px;
+    border-radius: 2px;
+    color: var(--text-muted);
+}
+
+#back-btn:hover {
+    background-color: var(--100);
+    color: var(--text-normal);
+}
+
+#edit-btn {
+    font-size: var(--fs10);
+    font-weight: 600;
+    background-color: var(--0);
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 7px 6px 7.25px;
+    border-radius: 2px;
+    color: var(--text-muted);
+}
+
+#edit-btn:hover {
+    background-color: var(--100);
+    color: var(--text-normal);
+}
+
+#download-btn {
+    font-size: var(--fs10);
+    font-weight: 600;
+    background-color: var(--blue);
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 7px 6px 7.25px;
+    border-radius: 2px;
+    color: var(--text-alt);
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+#download-btn:hover {
+    background-color: var(--blue-dark);
+}

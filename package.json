@@ -1,0 +1,50 @@
+{
+    "name": "VectorMagic",
+    "productName": "VectorMagic",
+    "version": "1.0.0",
+    "description": "Convert bitmap images to vectors using AI",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "dist-cross": "electron-builder -mwl"
+    },
+    "build": {
+        "appId": "com.mattblam.vectormagic",
+        "win": {
+            "target": [
+                "nsis",
+                "portable"
+            ],
+            "icon": "logo/VectorMagic.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "installerIcon": "logo/VectorMagic.ico",
+            "uninstallerIcon": "logo/VectorMagic.ico",
+            "uninstallDisplayName": "VectorMagic",
+            "deleteAppDataOnUninstall": true
+        },
+        "mac": {
+            "category": "public.app-category.graphics-design",
+            "icon": "logo/VectorMagic.icns"
+        },
+        "linux": {
+            "target": "AppImage",
+            "icon": "logo/VectorMagic.png"
+        }
+    },
+    "author": {
+        "name": "Matthew Blam"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "is-online": "^10.0.0",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {
+        "electron": "^25.2.0"
+    }
+}

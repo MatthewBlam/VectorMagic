@@ -1,0 +1,73 @@
+#dimmer {
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    background-color: var(--title);
+    opacity: 0.5;
+    user-select: none;
+    transition: var(--medium);
+}
+
+#progress-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 720px;
+    height: 110px;
+    border-radius: 4px;
+    background-color: var(--0);
+    box-shadow: var(--elevation3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+#progress-info {
+    width: 89.5%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: end;
+}
+
+#progress-text {
+    font-size: var(--fs14);
+    font-weight: 500;
+    color: var(--text-muted);
+    user-select: none;
+    align-self: center;
+    padding-top: 2px;
+}
+
+#progress-cancel-btn {
+    margin-left: auto;
+    font-size: var(--fs8);
+    font-weight: 600;
+    background-color: var(--red);
+    color: var(--text-alt);
+    padding: 5px 6px 5px 6.25px;
+    border-radius: 2px;
+}
+
+#progress-cancel-btn:hover {
+    background-color: var(--red-dark);
+}
+
+#progress-bar {
+    width: 90%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: var(--100);
+    overflow: hidden;
+}
+
+#progress-indicator {
+    width: 0%;
+    height: 100%;
+    background-color: var(--blue);
+    transition: var(--medium);
+}

@@ -1,0 +1,98 @@
+:root {
+    --0: rgba(254, 254, 255, 1);
+    --100: rgba(240, 241, 245, 1);
+    --200: rgb(231, 234, 241);
+
+    --title: rgba(16, 24, 64, 1);
+    --text-muted: rgba(105, 111, 140, 1);
+    --text-normal: rgba(45, 49, 64, 1);
+    --icon-muted: rgba(143, 149, 178, 1);
+    --icon-normal: rgba(105, 111, 140, 1);
+    --text-alt: rgb(252, 252, 253);
+
+    --color-check: rgba(45, 49, 64, 1);
+    --tooltip: rgba(67, 74, 96, 1);
+    --tooltip-text: rgba(254, 254, 255, 1);
+    --check: rgba(254, 254, 255, 1);
+    --tag_text: black;
+    --blur: rgba(16, 24, 64, 0.5);
+    --em: rgba(45, 49, 64, 1);
+
+    --red: rgba(191, 97, 106, 1);
+    --red-dark: rgb(168, 92, 98);
+    --yellow: rgba(235, 203, 139, 1);
+    --blue: rgb(111, 142, 255);
+    --blue-dark: rgb(79, 108, 210);
+
+    --fs32: 32px;
+    --fs24: 24px;
+    --fs16: 16px;
+    --fs14: 14px;
+    --fs12: 12px;
+    --fs10: 10px;
+    --fs8: 8px;
+
+    --elevation1: 0px 1px 2px rgba(16, 24, 64, 0.2);
+    --elevation2: 0px 2px 8px rgba(16, 24, 64, 0.3);
+    --elevation3: 0px 10px 40px rgba(16, 24, 64, 0.5);
+
+    --short: 0.1s;
+    --medium: 0.3s;
+    --long: 0.6s;
+    --super-long: 1s;
+}
+
+/* MAIN */
+
+*,
+*::before,
+*::after {
+    padding: none;
+    margin: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: var(--0);
+    color: var(--text-normal);
+}
+
+.btn {
+    transition: var(--short);
+    user-select: none;
+    cursor: pointer;
+}
+
+#app-container {
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 9.75vh 5vw 10vh 5vw;
+    gap: 10px;
+}
+
+.popup-page {
+    transition: var(--medium);
+}
+
+.header {
+    font-size: var(--fs24);
+    font-weight: 600;
+    user-select: none;
+}

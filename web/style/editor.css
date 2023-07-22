@@ -1,0 +1,337 @@
+#editor-container {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 4px;
+    background-color: var(--0);
+    top: 50%;
+    left: 50%;
+    padding: 2.5% 3% 2.25% 3%;
+    box-shadow: var(--elevation3);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-container {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown {
+    font-size: var(--fs12);
+    width: 240px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    background-color: var(--0);
+    border-radius: 4px;
+    padding: 8px 10px 7.5px 12px;
+    box-shadow: var(--elevation2);
+}
+
+.dropdown > span {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-right: 7px;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+    color: var(--text-normal);
+}
+
+.dropdown > svg {
+    pointer-events: none;
+    margin-left: auto;
+    margin-top: 1px;
+    width: 12px;
+    height: 12px;
+    color: var(--icon-muted);
+    transition: var(--short) linear;
+}
+
+.dropdown-menu {
+    position: absolute;
+    font-size: var(--fs12);
+    width: 240px;
+    white-space: nowrap;
+    height: fit-content;
+    max-height: calc(2.5em * 5);
+    margin-top: 10px;
+    left: 0px;
+    box-shadow: var(--elevation2);
+    border-radius: 4px;
+    background-color: var(--0);
+    z-index: 10;
+    overflow-y: scroll;
+    transition: var(--medium);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.dropdown-option {
+    padding: 8px 12px 8px 12px;
+    cursor: pointer;
+    height: 2.5em;
+    transition: var(--short);
+    color: var(--text-muted);
+    font-weight: 500;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.dropdown-option:hover {
+    background: var(--100);
+    color: var(--text-normal);
+}
+
+.dropdown_option:first-child {
+    border-radius: 4px 4px 0px 0px;
+}
+
+.dropdown_option:last-child {
+    border-radius: 0px 0px 4px 4px;
+}
+
+#main-editor-container {
+    flex-grow: 1;
+    padding: 20px 0px 20px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+
+#panel-divider {
+    width: 10px;
+    min-width: 10px;
+    max-width: 10px;
+    height: 100%;
+    cursor: col-resize;
+}
+
+.svg-panel {
+    background-color: var(--200);
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0px 8px 0px;
+    gap: 8px;
+}
+
+.svg-panel-title {
+    font-size: var(--fs8);
+    font-weight: 600;
+    color: var(--text-muted);
+    padding-left: 8px;
+    user-select: none;
+}
+
+#svg-display-container {
+    width: calc(80% - 5px);
+    width: 80%;
+    overflow: hidden;
+}
+
+#svg-display-scroll {
+    overflow: scroll;
+    width: calc(100% - 8px - 8px);
+    height: 100%;
+    margin-left: 8px;
+    border-radius: 4px;
+    padding: 20px;
+    background: repeating-conic-gradient(var(--0) 0% 25%, var(--100) 0% 50%) 50% / 20px 20px;
+    cursor: move;
+}
+
+#svg-display {
+    border-radius: 4px;
+    width: 500%;
+    height: 500%;
+    position: relative;
+    transform-origin: 50% 50%;
+    transform: scale(50%);
+}
+
+#svg-display > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#svg-zoom-btns {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    padding: 4px;
+    background-color: var(--0);
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+    border-radius: 4px;
+    box-shadow: var(--elevation1);
+    top: calc(26px + 8px);
+    right: calc(8px + 8px);
+}
+
+#zoom-level-text {
+    font-size: var(--fs10);
+    font-weight: 600;
+    color: var(--text-normal);
+    line-height: 16px;
+    width: 26px;
+    text-align: center;
+    margin-left: 1.75px;
+    user-select: none;
+}
+
+.zoom-btn {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background-color: var(--0);
+}
+
+.zoom-btn > svg {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    color: var(--text-muted);
+}
+
+.zoom-btn:hover {
+    background-color: var(--100);
+}
+
+.zoom-btn:hover > svg {
+    color: var(--text-normal);
+}
+
+#svg-layers-container {
+    /*width: calc(20% - 5px);*/
+    flex: 1;
+}
+
+#svg-layers-scroll {
+    width: calc(100% + 2px);
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#svg-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.svg-layer:last-child {
+    margin-bottom: 2px;
+}
+
+.svg-layer {
+    background-color: var(--0);
+    width: calc(100% - 8px - 8px - 2px);
+    height: fit-content;
+    border-radius: 4px;
+    padding: 6px 8px 6px 8px;
+    margin-left: 8px;
+    box-shadow: var(--elevation1);
+    overflow: hidden;
+}
+
+.checkbox-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--short);
+}
+
+.checkbox {
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+    background-color: var(--200);
+    border-radius: 2px;
+    pointer-events: none;
+    transition: var(--short);
+    position: relative;
+}
+
+.checkmark {
+    color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    padding: 2.5px;
+    pointer-events: none;
+    transition: var(--short);
+}
+
+.svg-layer-name {
+    font-size: var(--fs12);
+    font-weight: 500;
+    color: var(--text-muted);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+#editor-btns-container {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#editor-close-btn {
+    font-size: var(--fs10);
+    font-weight: 600;
+    background-color: var(--100);
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 7.25px 6px 7px;
+    border-radius: 2px;
+    color: var(--text-muted);
+}
+
+#editor-save-btn {
+    font-size: var(--fs10);
+    font-weight: 600;
+    background-color: var(--blue);
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 7.4px 6px 7px;
+    border-radius: 2px;
+    color: var(--text-alt);
+    margin-left: auto;
+}
+
+#editor-close-btn:hover {
+    background-color: var(--200);
+    color: var(--text-normal);
+}
+
+#editor-save-btn:hover {
+    background-color: var(--blue-dark);
+}
