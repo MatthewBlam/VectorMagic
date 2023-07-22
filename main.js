@@ -1,13 +1,13 @@
 // TODO: cache encoding
 
-const { app, BrowserWindow, ipcMain, screen, Menu, nativeTheme, dialog } = require("electron");
+const { app, BrowserWindow, ipcMain, screen, nativeTheme, dialog } = require("electron");
 const request = require("request");
 const fs = require("fs");
 const path = require("path");
 const process = require("process");
 const os = process.platform;
 const http2 = require("http2");
-const zlib = require("node:zlib");
+// const zlib = require("node:zlib");
 
 function isConnected() {
     return new Promise((resolve) => {
@@ -174,7 +174,12 @@ function open_dialog() {
         })
         .then(function (response) {
             if (!response.canceled) {
-                var filepath = String(response.filePaths[0]).split("/").join("&sol;");
+                var filepath;
+                if (os == "darwin") {
+                    filepath = String(response.filePaths[0]).split("/").join("&sol;");
+                } else {
+                    filepath = String(response.filePaths[0]).split("\\").join("&sol;");
+                }
                 sendRender({ dialog: filepath });
             } else {
             }
